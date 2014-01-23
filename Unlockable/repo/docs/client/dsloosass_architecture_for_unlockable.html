@@ -1,0 +1,137 @@
+<h1>DSLOOSASS Architecture for Unlockable</h1>
+
+<p><strong>Domain Specific Language for Object Oriented Syntaticlly Awesome Stylesheets</strong></p>
+
+<ul>
+<li>Author: Jeff Scott Ward</li>
+<li>Twitter: @jeffscottward</li>
+<li>Github: jeffscottward</li>
+</ul>
+
+<hr />
+
+<h4>Ruby Environment:</h4>
+
+<p>Install the following Ruby Gems with: <code>gem install &lt;module name&gt;</code> in your Terminal App.</p>
+
+<p>To learn the syntax and api, please use the documentation links </p>
+
+<ul>
+<li><code>gem install sass</code> - <a href="http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html">Sass Docs</a></li>
+<li><code>gem install compass</code> - <a href="http://compass-style.org/reference/compass/css3/">Compass Docs</a></li>
+<li><code>gem install susy</code>  - <a href="http://susy.oddbird.net/guides/reference/">Susy Docs</a></li>
+<li><code>gem install breakpoint</code> - <a href="http://breakpoint-sass.com/">Breakpoint Docs</a></li>
+<li><code>gem install animation --pre</code> - <a href="https://github.com/ericam/compass-animation">Animation Docs</a></li>
+</ul>
+
+<p><strong>Note: SUSY Grid was never used and may be removed by deleting the <code>@import</code> in <code>screen.sass</code> and deleting <code>base.sass</code></strong></p>
+
+<hr />
+
+<h3>Compiling Your SASS</h3>
+
+<ul>
+<li>To watch for changes and fire-off the compilation process on save, type <code>compass watch</code> in the Terminal at the root of the client directory.</li>
+</ul>
+
+<h3>Screen.sass (CSS Output file)</h3>
+
+<ul>
+<li>This is the main file to which the all the imports are funneled into at the end of the compiling process.</li>
+<li>You will end up with a <code>screen.css</code> file.</li>
+<li>Prepended <code>_</code> files mean it does not compile that individual file</li>
+</ul>
+
+<h3>App Baseline/Normalization</h3>
+
+<ul>
+<li>Top section is just plugin setup</li>
+<li>Rest of files in <code>screen.sass</code> below</li>
+<li><code>_vars.sass</code> - <strong>ALL</strong> Variables</li>
+<li><code>_mixins.sass</code> - <strong>ALL</strong> Mixins (see <a href="http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html">Sass Docs</a> for more on Mixins)</li>
+<li><code>_fonts.sass</code> - <strong>ALL</strong> Typographic Fonts</li>
+<li><code>_normalize.sass</code> - HTML5 Boilerplate <a href="https://github.com/necolas/normalize.css/">Normalize.css</a></li>
+<li><code>_utils.sass</code> - HTML5 Boilerplate <a href="https://github.com/iaakash/HTML5Bolierplate/blob/master/doc/css.md">Helpers</a></li>
+<li><code>animation/animate.* sass</code> - Required by Animation Plugin <a href="https://github.com/ericam/compass-animation#animatecss">no underscore because of compilation output</a></li>
+<li><code>_custom-animations.sass</code> - Slider panel animation and sprite animation rule generators</li>
+<li><code>_font-awesome.sass</code> - Only UI Font used so far. <a href="http://fortawesome.github.io/Font-Awesome/">Twitter Bootstrap's Font Awesome</a></li>
+</ul>
+
+<hr />
+
+<h3>_Unlockable.sass (Main app file)</h3>
+
+<ul>
+<li><code>@import global-defaults</code> for baseline styling for the app</li>
+</ul>
+
+<p><strong>Screen States</strong>
+Screen states are determined by HTML class chaining at the top of each file. </p>
+
+<ul>
+<li><strong>Example:</strong> <code>&amp;.welcome-screen</code></li>
+<li><strong>Example:</strong> <code>&amp;.instructions-screen</code></li>
+</ul>
+
+<h5>NOTE:</h5>
+
+<p>The <code>&amp;</code> symbol represents the css rule of the parent, and adding a class selector immediately following represents an <strong>"iteration"</strong> or <strong>"modifying class"</strong> of that rule.</p>
+
+<p><strong>Initializer Screens</strong></p>
+
+<ul>
+<li><code>@import '_welcome-screen'</code></li>
+<li><code>@import '_how-it-works-screen'</code></li>
+</ul>
+
+<p><strong>Instruction Screens</strong></p>
+
+<ul>
+<li><code>@import '_instructions-template'</code> 
+<ul>
+<li>Abstracted baseline, applies to <code>[class*="-instructions-screen"]</code> (<em>e.g.</em> any class with that string)</li>
+</ul></li>
+<li><code>@import '_trivia-instructions-screen'</code></li>
+<li><code>@import '_frames-instructions-screen'</code></li>
+<li><code>@import '_puzzle-instructions-screen'</code></li>
+</ul>
+
+<p><strong>Game Screens</strong></p>
+
+<ul>
+<li><code>@import '_trivia-questions-screen'</code></li>
+<li><code>@import '_trivia-answers-screen'</code></li>
+<li><code>@import '_frames-round-screen'</code></li>
+<li><code>@import '_puzzle-game-screen'</code></li>
+</ul>
+
+<p><strong>End Screens</strong></p>
+
+<ul>
+<li><code>@import '_complete-screen'</code></li>
+<li><code>@import '_goodbye-screen'</code></li>
+<li><code>@import '_error-screen'</code></li>
+</ul>
+
+<p><strong>Components</strong> (Independent modules to be used though out the site)</p>
+
+<ul>
+<li><code>@import '_unlockable-inner-modal'</code></li>
+<li><code>@import '_scroll-bars'</code></li>
+<li><code>@import '_robots'</code></li>
+<li><code>@import '_buttons'</code></li>
+<li><code>@import '_ui-elements'</code></li>
+</ul>
+
+<p><strong>Sprites</strong></p>
+
+<h6><a href="http://compass-style.org/help/tutorials/spriting/">For usage of sprites click here</a></h6>
+
+<ul>
+<li>Animation Sprite Imports</li>
+<li>Image(UI) Sprites Imports</li>
+</ul>
+
+<p><strong><em>NOTE: Uncomment and save sprites to recompile, this is done to avoid image rebuilding on every save</em></strong></p>
+
+<p><strong><em>NOTE: Not using/importing <code>_sprites.sass</code> but should be</em></strong></p>

@@ -1,0 +1,16 @@
+<div class='unlockable-wrapper'>
+  <div class='unlockable-modal'>
+    {{outlet}}
+
+    {{# unless Unlockable.router.currentState.hideCloseButton }}
+        <button {{action doQuit}} id='unlockable-close-modal' class='unlockable-close-modal'>X</button>
+    {{/unless}}
+
+    {{view Unlockable.MuteView isMutedBinding=Unlockable.isMuted}}
+
+    {{# if Unlockable.router.currentState.showCustomerServiceButton}}
+        <button class="customer-service-btn" {{action customerService}}></button>
+    {{/if}}
+  </div>
+  <div class='unlockable-modal-bg'></div>
+</div>

@@ -1,0 +1,2 @@
+        {{view Unlockable.FooView sourcesBinding="content"}}
+      <a {{action commercialFinished}}> START </a>

@@ -1,0 +1,2 @@
+      <br><p style="float:right">{{timer}}</p>
+      {{outlet}}

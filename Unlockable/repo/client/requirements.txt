@@ -1,0 +1,3 @@
+watchdog
+##npm install this -
+##sudo npm install -g https://github.com/gabrielgrant/node-ember-precompile/tarball/compat-rc5

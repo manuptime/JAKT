@@ -1,0 +1,51 @@
+&[class*="-instructions-screen"]
+  padding: 0
+
+  .banner.instructions
+    font-size: 37px
+    line-height: 80px
+    text-indent: -35px
+
+  .headline
+    width: 100%
+    margin-top: 8%
+    position: relative
+    color: white
+    font-size: 55px
+    font-family: $changoReg
+    letter-spacing: 5px
+    line-height: 75px
+    text-transform: uppercase
+    text-align: center
+    text-shadow: $headLineTextShadow 6px 8px 0px, $headLineTextShadow -2px -2px 0px, $headLineTextShadow 2px 2px 0px, $headLineTextShadow 2px -2px 0px, $headLineTextShadow -2px 2px 0px
+
+    &::before
+      +pseudo()
+      +horizontal()
+      position: relative
+      width: 75px
+      height: 80px
+
+  .descriptor
+    margin-top: 15px
+    padding: 0 10px
+    color: black
+    font-size: 29px
+    font-family: $newscycleRegular
+    line-height: 40px
+    text-align: center
+
+  .instructions-image-wrapper
+    max-width: 90%
+    padding: 10px 0
+    display: block
+    margin: auto
+    background: rgba(255,255,255,0.2)
+    border-radius: 20px
+
+  .instructions-tile-image
+    margin: auto
+    width: 90%
+    height: 150px
+    background-repeat: no-repeat
+    background-size: 100% auto !important

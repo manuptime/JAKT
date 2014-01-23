@@ -1,0 +1,2 @@
+{{view Unlockable.DropblocksVideoView sourcesBinding="content.sources"}}
+{{view Unlockable.DropblocksGameView}}

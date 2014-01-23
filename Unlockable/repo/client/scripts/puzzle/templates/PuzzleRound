@@ -1,0 +1,2 @@
+{{view Unlockable.PuzzleVideoView sourcesBinding="content.sources"}}
+{{view Unlockable.PuzzleGameView}}

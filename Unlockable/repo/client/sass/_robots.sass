@@ -1,0 +1,117 @@
+.ted, .swoopy, .dancebot
+  position: absolute
+
+.ted
+
+  &.presenting
+    +spriteAnimtor( 260px, 327px, "ted-presenting-animation-s17d6a2ab3d", tedPresenting, 8, .5s, 1)
+    top: 45%
+    left: 5%
+    
+
+  &.thinking
+    @extend .robots-ted-thinking
+    +transform(scaleX(0.9) scaleY(0.9))
+    top: 30%
+    left: 13%
+    width: 162px
+    height: 400px
+
+  &.flava-flav
+    @extend .robots-ted-celebrating
+    +transform(scale(.9))
+    top: 34%
+    left: 8%
+    
+.swoopy
+
+  &.curious
+    @extend .robots-swoopy-curious
+    top: 50%
+    left: 5%
+    width: 380px
+    height: 250px
+
+  &.frames
+    @extend .robots-swoopy-sorting
+    +transform(scaleX(-0.9) scaleY(0.9))
+    top: 47%
+    left: 1%
+    width: 380px
+    height: 250px
+
+  &.confused
+    @extend .robots-swoopy-confused
+    bottom: 10%
+    width: 380px
+    height: 250px
+
+    &::after
+      +pseudo()
+      height: 20px
+      width: 100%
+      position: relative
+      top: 100%
+      background: rgba(0,0,0,.2)
+      border-radius: 50%
+
+  &.flying
+    +spriteAnimtor( 250px, 199px, "swoopy-animation-s15f8abc09e", swoopyFlying, 17, 1.2s, infinite)
+    +transform(translateZ(0))
+    left: 50px
+    bottom: 30px
+
+  &.rocking
+    @extend .robots-swoopy-rocking
+    width: 250px
+    height: 215px
+    left: 110px
+    bottom: 50px
+
+.dancebot
+
+  &.booyah
+    top: 54%
+    left: 11%
+    @extend .robots-dancebot
+
+  &.carltonDance
+    +spriteAnimtor( 313px, 349px, "carlton-animation-s7ff06bfdcc", carltondance, 10, .8s, infinite)
+    top: 34%
+    left: 7%
+    
+
+.star-performance-1,
+.star-performance-2,
+.star-performance-3
+  height: 100%
+
+.star-performance-1 .robot,
+.star-performance-2 .robot,
+.star-performance-3 .robot
+  display: block
+  position: absolute
+  z-index: 1000000000000000
+
+.star-performance-1
+
+  .robot
+    @extend .robots-swoopy-dead
+    top: 48%
+    left: 5%
+    height: 210px
+    width: 300px
+
+.star-performance-2
+
+  .robot
+    +transform(scale(.9))
+    +spriteAnimtor( 307px, 350px, "ted-bowing-animation-sf8c166aea2", tedBowing, 42, 3.2s, 1)
+    top: 42%
+    
+.star-performance-3
+
+  .robot
+    +transform(scale(.9))
+    +spriteAnimtor( 260px, 409px, "gangnam-animation-s8c795dc776", gangnamDance, 40, 3.8s, infinite)
+    top: 32%

@@ -1,0 +1,40 @@
+Notes:
+
+3 Characters
+
+1.Ted
+2.Swoopy
+3.Dance Machine
+
+Liz will send images of Ted / Swoopy / Dance Machine
+and instructions of where to put them
+
+TV screen with ears will drop ears in mobile
+
+Timer
+
+  Pause with calss injection
+
+  Flip to new one
+  and display corresponding image
+  then remove any images on next question and remove timer pause injection
+
+Trivia
+
+Drop away questions
+1. first the one that werent selected ( talk to be about rendering all of them)
+2. Then the right/wrong ones
+
+Frames
+
+Move all up into center after submit and then kick over to next screen after timeout in javascript
+
+
+
+Ben Things to do:
+
+ - TIMER - Dynamic injection of degree units based off total time ie 30s, 20s, whatever
+ - TIMER TRIVIA - Pause timer and add incorrect or correct when on answered question screen for trivia, remove and continue timer
+ - All questions on trivia questions screen carry to answered screen so we can animate unselected and right/wrong
+ - Frames - timeout for submit button to allow for animations followed by kick to next screen( not a priorty )
+ - Hashing URL to jump to different states of app

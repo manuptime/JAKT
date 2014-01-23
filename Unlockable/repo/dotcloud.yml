@@ -1,0 +1,30 @@
+static:
+   type: static
+   approot: client
+
+api:
+  type: python-worker
+  config:
+    python_version: v2.7
+  approot: api
+  ports:
+    www: http
+  buildscript: api/builder
+
+cms:
+  type: python
+  config:
+    python_version: v2.7
+  approot: cms
+
+data:
+  type: custom
+  approot: postgresql
+  buildscript: postgresql/builder
+  processes:
+    postgres: ~/run.postgres
+  ports:
+    pgsql: tcp
+
+cache:
+  type: redis

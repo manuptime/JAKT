@@ -1,0 +1,10 @@
+if ! 'cp ~/data/.s3cfg ~/';then
+     echo 's3cfg not found'
+else
+     echo 'copied s3cfg to home'
+fi
+
+crontab - <<EOF
+MAILTO="benbeecher@gmail.com"
+$[$RANDOM%60] $[$RANDOM%24] * * * ~/backup.sh  pgsql s3 unlockable-backup  2>&1 | mail -s "Backup result for $HOSTNAME" backup@unlockable.com
+EOF

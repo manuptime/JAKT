@@ -1,0 +1,96 @@
+&.frames-round-screen
+  padding: 0
+  
+  span.ui-draggable-dragging img
+    +transform(scale(.9))
+
+  img[src="img/placehold.gif"]
+    opacity: 0
+
+  .attempts
+    width: 22%
+    height: 70px
+    position: relative
+    right: -78%
+
+    .lock
+      +horizontal()
+      @extend .ui-elements-gold-lock-transparent 
+      width: 42px
+      height: 66px
+
+      &.success
+        @extend .ui-elements-gold-lock-transparent
+
+      &.fail
+        @extend .ui-elements-gold-lock-transparent
+
+        &::before
+          +pseudo()
+          @extend .ui-elements-micro-x-red
+          width: 42px
+          height: 40px
+          position: relative
+          top: 35%
+          left: 3%
+          background-size: 430% auto
+          background-position-y: -165px !important
+
+  .initial-frames-list,
+  .ending-frames-list
+    padding: 0
+    text-align: center
+
+  .initial-frames-list
+    width: 71%
+    height: 65%
+    margin: 0%
+    position: absolute
+    top: 20%
+    left: 16%
+
+  .ending-frames-list
+    margin: 0% auto
+    height: 18%
+    position: relative
+    top: 58%
+
+  .initial-frame-item,
+  .ending-frame-item
+    +horizontal()
+    width: 14%
+    height: 29%
+    margin-right: 5%/$framesNumOfFrames
+    position: relative
+
+    &:last-child
+      margin-right: 0
+
+    img
+      +wh()
+
+    span
+      +wh()
+      position: absolute
+      top: 0
+      left: 0
+
+  .initial-frame-item
+    width: 200px
+    height: 121px
+    margin: 0 10px 10px 0
+    border: 3px dashed white
+
+  .initial-frame-item:nth-of-type(1), .initial-frame-item:nth-of-type(2), .initial-frame-item:nth-of-type(3)
+    margin-bottom: 10px
+
+  .ending-frame-item
+    height: 85%
+    position: relative
+    background: white
+    
+  .is-correct
+    border: 5px solid green
+
+  .locked, .frame-hover
+    border: 5px solid green

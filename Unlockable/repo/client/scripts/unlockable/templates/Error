@@ -1,0 +1,16 @@
+<div {{bindAttr class=":unlockable-screen :error-screen submitted:submitted"}}>
+  <div class="banner error">ERROR</div>
+  <h1 class="headline">Uh oh, something went wrong</h1>
+  <div class="error-bot"></div>
+  <h4 class="descriptor">Report your Error to help us fix it</h4>
+
+
+  {{# unless submitted }}
+    <div {{action reportError on="click"}} id="error_btn" class="base-btn report-error">Report Error</div>
+  {{ else }}
+    <div class="success">Got it!</div>
+  {{/ unless}}
+
+
+
+</div>

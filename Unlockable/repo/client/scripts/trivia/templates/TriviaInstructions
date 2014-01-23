@@ -1,0 +1,10 @@
+<div class="unlockable-screen trivia-instructions-screen">
+  <div class="banner instructions">Instructions</div>
+  <h1 class="headline">Trivia?</h1>
+  <h4 class="descriptor">Watch the video and don't forget to remember.</h4>
+  <div class="instructions-image-wrapper">
+  	<div class="instructions-tile-image"></div>
+  </div>
+</div>
+
+<a {{action watchCommercial}} class="base-btn start" tab-index="1">Start</a>

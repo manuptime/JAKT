@@ -1,0 +1,7 @@
+<div class="unlockable-screen frames-commercial-screen">
+  {{view Unlockable.CommercialView sourcesBinding="content"}}
+  {{# if Unlockable.debug}}
+    <a {{action commercialFinished}} style="float:right;font-weight:bold;color:blue;"> SKIP (development) </a>
+  {{/ if}}
+
+</div>

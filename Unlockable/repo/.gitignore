@@ -1,0 +1,14 @@
+\#*#
+.#*
+*webapp-build*
+*.pyc
+*.scssc
+.dotcloud*
+*.sassc
+*ropeproject*
+*.DS_Store
+*_flymake*
+.sass-cache*
+*.webm
+*.mp4
+*.floo

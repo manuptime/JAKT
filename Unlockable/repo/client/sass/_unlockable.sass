@@ -1,0 +1,208 @@
+.unlockable-fixed-position
+  position: fixed
+
+#unlockable-main-outer
+  #unlockable-main-inner
+    #unlockable-main-wrapper
+      @import "_global-defaults"
+
+      #unlockable-main
+        +wh()
+        position: fixed
+        z-index: 1
+        top: 0
+        left: 0
+
+      .unlockable-wrapper
+        +wh()
+        display: block
+        position: absolute
+        background: hsla(0,0,0,.5)
+        z-index: 1
+        top: 0px
+        left: 0px
+
+
+      .unlockable-modal
+        width: 1024px
+        height: $unlockableModalSize
+        max-width: 1024px
+        max-height: 633px
+        display: block
+        margin: 40px auto auto auto
+        padding: 30px
+        position: relative
+        z-index: 3
+        background: $themeBase
+        border-radius: $frameBorderRadius
+
+        .ember-view
+          +wh()
+
+      .unlockable-modal-bg
+        width: 1024px
+        height: $unlockableModalSize
+        max-width: 1024px
+        max-height: 633px
+        display: block
+        margin: auto
+        padding: 30px
+        z-index: 1
+        position: relative
+        left: 50%
+        margin: -543px auto auto -512px
+        background: #44AA52
+        border-radius: 50%
+        border-bottom-right-radius: 72px
+        border-bottom-left-radius: 72px
+
+
+      .unlockable-screen
+        @extend .backgrounds-blue-bg-pattern
+        +wh()
+        background-repeat: repeat-x !important
+        padding: 5%
+        position: relative
+        overflow: hidden
+        border: 5px solid white
+        border-radius: $frameBorderRadius
+        font-weight: bold
+
+        .column
+          display: inline-block
+          vertical-align: top
+          margin: 0
+          height: 100%
+          border-radius: 67px
+
+        .left-column
+          border-top-right-radius: 0
+          border-bottom-right-radius: 0
+
+        .right-column
+          +transform(translateX(5px))
+          border-top-left-radius: 0
+          border-bottom-left-radius: 0
+
+        .banner
+          +transform(rotate(330deg))
+          +box-shadow(rgba(0,0,0,.2) 0 5px 10px)
+          width: 600px
+          position: absolute
+          z-index: 10000
+          left: -15%
+          top: 8%
+          background: white
+          color: $callOutTextColor
+          font-family: $sigmarone
+          text-align: center
+
+        .headline
+          margin: auto
+          margin-top: 7%
+          font-size: 70px
+          line-height: 80px
+
+        #unlockable-commercial
+          width: 634px
+          height: 360px
+          display: block
+          margin: 20px auto 20px auto
+          background: black
+          border: 5px solid white
+
+        // Import All Screen States
+        // ====================================
+
+        // Initializer Screens
+        // -------------------
+        @import '_welcome-screen'
+        @import '_how-it-works-screen'
+
+        // Instruction Screens
+        // -------------------
+        @import '_instructions-template'
+
+        @import '_trivia-instructions-screen'
+        @import '_frames-instructions-screen'
+        @import '_puzzle-instructions-screen'
+        @import '_dropblocks-instructions-screen'
+
+        // Game Screens
+        // ------------
+        @import '_trivia-questions-screen'
+        @import '_trivia-answers-screen'
+
+        @import '_frames-round-screen'
+
+        @import '_puzzle-game-screen'
+
+        // End Screens
+        // -----------
+        @import '_complete-screen'
+        @import '_goodbye-screen'
+        @import '_error-screen'
+
+
+      // Import All Components
+      // ====================================
+      @import '_unlockable-inner-modal'
+      @import '_scroll-bars'
+      @import '_robots'
+      @import '_buttons'
+      @import '_ui-elements'
+
+    // Import Compass Sprites
+    // ====================================
+
+    ////////////////////////
+    // Animation Sprites
+    ////////////////////////
+
+    // $carlton-animation-layout: horizontal
+    // @import "animations/carlton-animation/*.png"
+    // @include all-carlton-animation-sprites
+
+    // $gangnam-animation-layout: horizontal
+    // @import "animations/gangnam-animation/*.png"
+    // @include all-gangnam-animation-sprites
+
+    // $swoopy-animation-layout: horizontal
+    // @import "animations/swoopy-animation/*.png"
+    // @include all-swoopy-animation-sprites
+
+    // $ted-presenting-animation-layout: horizontal
+    // @import "animations/ted-presenting-animation/*.png"
+    // @include all-ted-presenting-animation-sprites
+
+    // $ted-bowing-animation-layout: horizontal
+    // @import "animations/ted-bowing-animation/*.png"
+    // @include all-ted-bowing-animation-sprites
+
+    ////////////////////////
+    // Image Sprites
+    ////////////////////////
+
+$robots-layout: vertical
+@import "robots/*.png"
+@include all-robots-sprites
+
+$backgrounds-layout: vertical
+@import "backgrounds/*.png"
+@include all-backgrounds-sprites
+
+$icons-layout: vertical
+@import "icons/*.png"
+@include all-icons-sprites
+
+$ui-elements-layout: vertical
+@import "ui-elements/*.png"
+@include all-ui-elements-sprites
+
+$instruction-panels-layout: vertical
+@import "instruction-panels/*.png"
+@include all-instruction-panels-sprites
+
+$misc-layout: vertical
+@import "misc/*.png"
+@include all-misc-sprites

@@ -1,0 +1,30 @@
+<div class="unlockable-screen goodbye-screen">
+  <div class="banner congrats">CONGRATS!</div>
+  <h1 class="headline booyah">BOOYAH!</h1>
+  <div class="win-box">
+    <div class="token-total">{{Unlockable.exitText}}</div>
+    <div {{action stopUnlockable on="click"}} class="base-btn">Collect Prize</div>
+    <div class="free-awesome-directive">{{Unlockable.exitTextDomain}}</div>
+
+  </div>
+  <div class="scorebar-wrapper">
+      <div class="webkit-radius-fix-scorebar"></div>
+      <div class="scorebar">
+        <div class="scoreText">
+          <span class="acquired">{{Unlockable.router.currentPlayerController.points}}</span>
+          <span> / </span>
+          <span class="totalAvailable">{{Unlockable.pointsNeeded}}</span></div>
+          {{view Unlockable.ScoreMercury}}
+      </div>
+    </div>
+</div>
+
+<div class="dancebot carltonDance"></div>
+
+<div class="prize unlocked-prize">
+  <div class="coinstack"></div>
+  <div class="lock">
+    <div class="lock-top"></div>
+    <div class="lock-bottom"></div>
+  </div>
+</div>

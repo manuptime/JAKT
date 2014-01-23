@@ -1,0 +1,69 @@
+&.goodbye-screen
+  @extend .backgrounds-green-bg-pattern
+  background-repeat: repeat-x !important
+
+  .banner.congrats
+    font-size: 40px
+    line-height: 80px
+    text-indent: -37px
+
+  .headline.booyah
+    margin-top: 8%
+    display: none
+    position: relative
+    top: -15%
+    right: -14%
+    color: white
+    font-family: $changoReg
+    letter-spacing: 10px
+    text-transform: uppercase
+    text-align: center
+    text-shadow: $headLineTextShadow 6px 8px 0px, $headLineTextShadow -2px -2px 0px, $headLineTextShadow 2px 2px 0px, $headLineTextShadow 2px -2px 0px, $headLineTextShadow -2px 2px 0px
+
+  .win-box
+    +animation-name(bounceInRight)
+    +animation-duration(1s)
+    @extend .backgrounds-blue-bg-pattern
+    background-repeat: repeat-x !important
+    padding: 10px 90px
+    right: 6%
+    width: 64%
+    height: 300px
+    position: absolute
+    top: 16%
+    float: right
+    border: 5px solid white
+    border-radius: 20px
+    color: white
+    text-align: center
+    
+    label
+      width: 100%
+      display: block
+      text-align: center
+      font-family: $newscycleBold
+      font-size: 36px
+
+    .token-total
+      margin-bottom: 12px
+      font-size: 46px
+      font-family: $sigmarone
+      line-height: 50px
+      text-shadow: $headLineTextShadow -2px -2px 0px, $headLineTextShadow 2px 2px 0px, $headLineTextShadow 2px -2px 0px, $headLineTextShadow -2px 2px 0px
+
+    .base-btn
+      width: 90%
+      font-size: 30px
+
+    .free-awesome-directive
+      font-size: 20px
+      font-family: $newscycleBold
+
+  .scorebar-wrapper .scorebar
+    .scoreText
+      top: -2px
+      right: -1%
+
+    .scoreMercury
+      left: 0%
+      border-bottom-left-radius: 72px

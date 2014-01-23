@@ -1,0 +1,10 @@
+<div class="unlockable-screen puzzle-instructions-screen">
+  <div class="banner instructions">Instructions</div>
+  <h1 class="headline">Puzzle</h1>
+  <h4 class="descriptor">Connect all the pieces before the video ends!</h4>
+  <div class="instructions-image-wrapper">
+    <div class="instructions-tile-image"></div>
+  </div>
+</div>
+
+<a {{action watchCommercial}} class="base-btn start" tab-index="1">Start</a>

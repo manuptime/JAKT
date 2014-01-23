@@ -1,0 +1,42 @@
+lexicon:
+
+play - a single commercial/game
+round - a group of three plays
+session - an entire user experiance - 1-3 rounds
+
+TODO: 
+      Setup require so that the applicaiton is loaded lazily in reaction to page load
+
+
+NOTES:
+Client:
+
+Testing:
+        MOCHA::
+                Mocha is the test runner and and utility belt for testing. It's everything except an actual assertion library
+
+                Install mocha - `npm install -g mocha`
+                run `mocha` to run tests.
+
+
+        CHAI::
+                Chai is the assertion library
+
+                Install chai - `npm install chai`
+                require it in your test code, ie `var assert = require('chai').assert
+
+
+
+       MAKE::
+                I'm going to make a make script sooner or later.
+
+
+
+       WRITING TESTS:::
+                Because coffeescript wraps everything in a function, we need to make sure to attach exports to the exports object when running for tests
+                ie if exports?: exports.foo = foo...
+
+
+TO RUN CLIENT LOCALLY
+cd client
+python -m SimpleHTTPServer

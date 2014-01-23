@@ -1,0 +1,52 @@
+<div {{bindAttr class="starClass"}}>
+
+  <div {{bindAttr data-stars="Unlockable.router.framesController.stars" class=":unlockable-screen :complete-screen"}}>
+    <div class="banner complete"><span class="gameName">SORT 'EM</span><br>COMPLETE!</div>
+    <ul class="stars">
+      <li class="star star-1 fadeInUp"></li>
+      <li class="star star-2 fadeInUp"></li>
+      <li class="star star-3 fadeInUp"></li>
+    </ul>
+    <h1 class="headline">{{Unlockable.router.framesController.score}}</h1>
+    <table class="descriptor">
+      <tbody>
+        <tr>
+          <td>ACCURACY</td>
+          <td>+{{Unlockable.router.framesController.accuracyPoints}}</td>
+        </tr>
+        <tr>
+          <td>TIME</td>
+          <td>+{{Unlockable.router.framesController.timePoints}}</td>
+          {{#if Unlockable.router.framesController.gotMaxTimePoints}}
+            <td class="max">MAX!</td>
+          {{/if}}
+        </tr>
+      </tbody>
+    </table>
+    <div class="scorebar-wrapper">
+      <div class="webkit-radius-fix-scorebar"></div>
+      <div class="scorebar">
+        <div class="scoreText">
+          <span class="acquired">{{Unlockable.router.currentPlayerController.points}}</span>
+          <span> / </span>
+          <span class="totalAvailable">{{Unlockable.pointsNeeded}}</span></div>
+          {{view Unlockable.ScoreMercury}}
+      </div>
+    </div>
+  </div>
+
+  <a class="base-btn next" {{action doneWithGame}}> NEXT </a>
+
+  <div class="robot"></div>
+
+  {{view Unlockable.OfferWindowView contentBinding="Unlockable.router.framesController"}}
+
+  <div class="prize">
+    <div class="coinstack"></div>
+    <div class="lock">
+      <div class="lock-top"></div>
+      <div class="lock-bottom"></div>
+    </div>
+  </div>
+
+</div>

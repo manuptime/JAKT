@@ -1,0 +1,11 @@
+  <div {{bindAttr class=":redeem-wrapper content.redeemed:redeemed"}}>
+    <div class="redeem">
+      <h6 class="redeem-headline">TELL US...</h6>
+      <div class="redeem-body">
+        <div class="redeem-body-text">Like this video?</div>
+        <img {{bindAttr src="content.logoPath"}} class="redeem-item"/>
+        <div {{action likeAd}} id="redeem-btn" class="base-btn redeem-btn">Like</div>
+        <div class="success">Liked!</div>
+      </div>
+    </div>
+  </div>

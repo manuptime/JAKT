@@ -1,0 +1,12 @@
+<div class="unlockable-screen trivia-questions-screen">
+    <h1 class="headline question">{{{content}}}</h1>
+    <ul class="answers">
+      {{#each answer in displayAnswers}}
+        <li>
+          <a class="base-btn trivia-answer" {{action questionAnswered answer}}>
+            {{answer}}
+          </a>
+        </li>
+      {{/each}}
+    </ul>
+</div>

@@ -1,0 +1,3 @@
+{{# each source in view.sources}}
+<source {{bindAttr src="source.src" type="source.type"}}>
+{{/each}}

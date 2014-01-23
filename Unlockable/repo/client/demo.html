@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en-US" class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Unlockable :: Modal Framework</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <script src="/unlockable.js"></script>
+	<!-- <script src="/webapp-build/unlockable-min.js"></script> -->
+    <!-- <script data-main="scripts/main" src="scripts/require/require.js"></script> -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript">
+
+        var prmstr = window.location.search.substr(1);
+        var prmarr = prmstr.split ("&");
+        var params = {};
+        var company, introText, exitText, exitTextDomain;
+
+        for ( var i = 0; i < prmarr.length; i++) {
+            var tmparr = prmarr[i].split("=");
+            params[tmparr[0]] = tmparr[1];
+        }
+        if (! ('name' in params)){
+            params['name'] = "Amazon1024"
+        }
+
+        company = params['name']
+        var randomnumber=Math.floor(Math.random()*1100)
+        UnlockableData = {foreignId:randomnumber}
+
+
+        //pull company from url, button top, button left
+        //unlockable.com/? name=Pandora &top=697 &left=530
+        //magic here, company, button_top, button_left have values
+
+        window.unlockableInventory = function(hasInventory){
+
+        }
+        window.finishedUnlockable = function(hasInventory){
+            $('.publisher-site').css("background-image", "url(/media/img/fixtures/backgrounds/"+ company + "_Screen_Congrats.jpg)");
+			$('#contact-btn').click(function(e){
+				window.location.href = "mailto:hello@unlockable.com";
+			})
+            $('#corp-btn').click(function(e){
+				window.location.href = "http://www.unlockable.com/index.html"
+			})
+
+        }
+        window.setupUnlockable = function(){
+            Unlockable.useFixtures = true
+            Unlockable.set('introText', introText)
+            Unlockable.set('exitText', exitText)
+            Unlockable.set('exitTextDomain', exitTextDomain)
+
+            $('#unlockable-btn').click(function(e){
+                $('#unlockable-main').show()
+                $('#unlockable-btn').hide()
+                $('html').css({
+                    "position": "fixed"
+                });
+
+                //games = [ 'frames', 'puzzle', 'trivia']
+                games = ['puzzle', 'trivia', 'frames']
+
+                if ('games' in params){
+                    games = params['games'].split(',')
+                }
+                data = {frames:'doritosFashionistaFrames', trivia:'mcdsFishTrivia', puzzle:'pepsiPuzzle'}
+                if ('frames' in params){
+                    data['frames'] = params['frames']
+                }
+                if ('trivia' in params){
+                    data['trivia'] = params['trivia']
+                }
+                if ('puzzle' in params){
+                    data['puzzle'] = params['puzzle']
+                }
+
+                Unlockable.setupFixtures(games, data)
+                Unlockable.startUnlockable(UnlockableData)
+
+
+
+            })
+        }
+
+        $(document).ready(function(){
+            var publisherSite = $('.publisher-site');
+            var body = $('body');
+            $('#unlockable-main').hide();
+
+            publisherSite.css("background-image", "url(media/img/fixtures/backgrounds/" + company + "_Screen_Landing.jpg)");
+            publisherSite.css("background-repeat", "no-repeat");
+
+            switch(company){
+                case "FreeAwesome":
+                    publisherSite.addClass('FreeAwesome');
+                    body.addClass('FreeAwesome');
+                    introText = "40 Free Tokens"
+                    exitText = "40 Free Tokens"
+                    exitTextDomain="(back at FreeAwesome.com)"
+                break;
+                case "NYT":
+                    publisherSite.addClass('NYT');
+					body.addClass('NYT');
+                break;
+                case "Pandora":
+                    publisherSite.addClass('Pandora');
+					body.addClass('Pandora');
+                break;
+                case "CondeNast":
+                    publisherSite.addClass('CondeNast');
+					body.addClass('CondeNast');
+                break;
+                case "Amazon1024":
+                    publisherSite.addClass('Amazon1024');
+					body.addClass('Amazon1024');
+                    introText = "Skyfall by Adele"
+                    exitText = "Skyfall by Adele"
+                    exitTextDomain="(back at Amazon)"
+                break;
+                case "Moxie":
+                    publisherSite.addClass('Moxie');
+					body.addClass('Moxie');
+                break;
+                case "amazonmadmen":
+                    publisherSite.addClass('amazonmadmen');
+                    body.addClass('amazonmadmen');
+                    introText = "Mad Men"
+                    exitText = "Mad Men"
+                    exitTextDomain= "(back at Amazon Instant)"
+                break;
+                case "wiredmadmen1":
+                    publisherSite.addClass('wiredmadmen1');
+					body.addClass('wiredmadmen1');
+                    introText = "Wired April '13"
+                    exitText = "Wired April '13"
+                    exitTextDomain= "(back at Wired)"
+                break;
+                case "redboxinstant":
+                    publisherSite.addClass('redboxinstant');
+					body.addClass('redboxinstant');
+                    introText = "42"
+                    exitText = "42"
+                    exitTextDomain= "(back at Redbox Instant)"
+                break;
+                case "pandoraone":
+                    publisherSite.addClass('pandoraone');
+					body.addClass('pandoraone');
+                    introText = "1 Month Pandora One"
+                    exitText = "1 Month Pandora One"
+                    exitTextDomain= "(back at Pandora)"
+                break;
+                case "candycrush":
+                    publisherSite.addClass('candycrush');
+					body.addClass('candycrush');
+                    introText = "Lollipop Hammer x3"
+                    exitText = "Lollipop Hammer x3"
+                    exitTextDomain= "(back at Candy Crush)"
+                break;
+                case "corpdemo":
+                    publisherSite.addClass('corpdemo');
+					body.addClass('corpdemo');
+                    introText = "Skyfall by Adele"
+                    exitText = "Skyfall by Adele"
+                    exitTextDomain= "(back to Unlockable)"
+                break;
+                case "angrybirds":
+                    publisherSite.addClass('angrybirds');
+                    body.addClass('angrybirds');
+                    introText = "Cpt. Panaka x10"
+                    exitText = "Cpt. Panaka x10"
+                    exitTextDomain= "(back to Angry Birds Star Wars II)"
+                break;
+                case "spotify":
+                    publisherSite.addClass('spotify');
+                    body.addClass('spotify');
+                    introText = "1 Month Free Spotify"
+                    exitText = "1 Month Free Spotify"
+                    exitTextDomain= "(back to Spotify)"
+                break;
+                case "gameloft":
+                    publisherSite.addClass('gameloft');
+                    body.addClass('gameloft');
+                    introText = "10 Energy"
+                    exitText = "10 Energy"
+                    exitTextDomain= "(back to Oregon Trail)"
+                break;
+                case "huluplus":
+                    publisherSite.addClass('huluplus');
+                    body.addClass('huluplus');
+                    introText = "1 Week Free: Hulu Plus"
+                    exitText = "1 Week Free: Hulu Plus"
+                    exitTextDomain= "(back to Hulu.com)"
+                break;
+            }
+        });
+
+    </script>
+
+  </head>
+
+  <body>
+    <style>
+        html, body, .publisher-site{
+            width: 100%;
+            height: 100%;
+        }
+        #unlockable-main{
+            display: none;
+        }
+        .publisher-site{
+            margin: auto;
+            width: 1024px;
+            height: 1400px;
+            position: relative;
+            z-index: 0;
+        }
+        .publisher-site > #unlockable-btn{
+            position: absolute;
+            opacity: 0;
+            background: black;
+            height: 35px;
+            width: 165px;
+            z-index: 1;
+        }
+
+        .publisher-site > #contact-btn{
+            position: absolute;
+            top: 373px;
+            left: 598px;
+            opacity: 0;
+            background: black;
+            height: 45px;
+            width: 203px;
+            z-index: 1;
+        }
+
+        .publisher-site > #corp-btn{
+            position: absolute;
+            top: 373px;
+            left: 352px;
+            opacity: 0;
+            background: black;
+            height: 45px;
+            width: 216px;
+            z-index: 1;
+        }
+
+        .publisher-site.NYT  > #unlockable-btn{
+            top: 635px;
+            left: 715px;
+        }
+        .publisher-site.Pandora > #unlockable-btn{
+            top: 700px;
+            left: 274px;
+        }
+        .publisher-site.CondeNast  > #unlockable-btn{
+            top: 880px;
+            left: 506px;
+        }
+
+        /* FreeAwesome 40 Free Tokens - default */
+        .publisher-site.FreeAwesome  > #unlockable-btn{
+            top: 323px !important;
+            left: 816px !important;
+        }
+        .FreeAwesome   .adele{
+            font-size: 63px !important;
+        }
+        .FreeAwesome  .token-total{
+            margin: 27px 0 25px 0 !important;
+        }
+
+        /* Amazon Skyfall by Adele */
+        .publisher-site.Amazon1024  > #unlockable-btn{
+            top: 323px !important;
+            left: 816px !important;
+        }
+        .Amazon1024   .adele{
+            font-size: 63px !important;
+        }
+        .Amazon1024  .token-total{
+            margin: 27px 0 25px 0 !important;
+        }
+
+        /* Amazon Mad Men */
+        .publisher-site.amazonmadmen  > #unlockable-btn{
+            top: 265px !important;
+            left: 813px !important;
+        }
+        .amazonmadmen  .adele{
+            font-size: 65px !important;
+        }
+        .amazonmadmen .token-total{
+            font-size: 50px !important;
+            margin: 49px 0 30px 0 !important;
+        }
+
+        /* Wired Mad Men (iPad) */
+        .publisher-site.wiredmadmen1  > #unlockable-btn{
+            top: 602px !important;
+            left: 470px !important;
+        }
+        .wiredmadmen1  .adele{
+            font-size: 65px !important;
+        }
+        .wiredmadmen1 .token-total{
+            font-size: 50px !important;
+            margin: 49px 0 30px 0 !important;
+        }
+
+        /* Redbox Instant */
+        .publisher-site.redboxinstant > #unlockable-btn{
+            top: 376px !important;
+            left: 555px !important;
+        }
+        .redboxinstant  .adele{
+            font-size: 65px !important;
+            margin-bottom: 40px !important;
+            margin-top: 76px !important;
+        }
+        .redboxinstant .token-total{
+            font-size: 60px !important;
+            margin: 44px 0 42px 0 !important;
+        }
+
+        /* Pandora One */
+        .publisher-site.pandoraone  > #unlockable-btn{
+            top: 248px !important;
+            left: 673px !important;
+        }
+        .pandoraone  .adele{
+            font-size: 39px !important;
+        }
+        .pandoraone .token-total{
+            font-size: 50px !important;
+            margin: 27px 0 23px 0 !important;
+        }
+
+        /* Corporate Website Demo */
+        .publisher-site.corpdemo  > #unlockable-btn{
+            top: 389px !important;
+            left: 261px !important;
+            height: 43px !important;
+            width: 176px !important;
+        }
+        .corpdemo .adele{
+            font-size: 63px !important;
+        }
+        .corpdemo .token-total{
+            margin: 22px 0 29px 0 !important;
+        }
+
+        /* Candy Crush (iPad) */
+        .publisher-site.candycrush  > #unlockable-btn{
+            top: 560px !important;
+            left: 366px !important;
+            height: 73px !important;
+            width: 286px !important;
+        }
+        .candycrush .adele{
+            font-size: 50px !important;
+        }
+        .candycrush  .token-total{
+            font-size: 50px !important;
+            margin: 27px 0 25px 0 !important;
+        }
+
+        /* Angry Birds Star Wars II (iPad) */
+        .publisher-site.angrybirds  > #unlockable-btn{
+            top: 576px !important;
+            left: 707px !important;
+            height: 113px !important;
+            width: 186px !important;
+        }
+        .angrybirds .adele{
+            font-size: 43px !important;
+        }
+        .angrybirds  .token-total{
+            font-size: 43px !important;
+            margin: 27px 0 25px 0 !important;
+        }
+
+        /* One Month Free Spotify */
+        .publisher-site.spotify  > #unlockable-btn{
+            top: 13px !important;
+            left: 711px !important;
+            height: 33px !important;
+            width: 108px !important;
+        }
+        .spotify .adele{
+            font-size: 38px !important;
+        }
+        .spotify  .token-total{
+            font-size: 45px !important;
+            margin: 27px 0 25px 0 !important;
+        }
+
+        /* 10 Free Energy from Oregon Trail: American Settlers (iPad) */
+        .publisher-site.gameloft  > #unlockable-btn{
+            top: 466px !important;
+            left: 406px !important;
+            height: 83px !important;
+            width: 224px !important;
+        }
+        .gameloft .adele{
+            font-size: 48px !important;
+            margin-top: 95px !important;
+        }
+        .gameloft  .token-total{
+            font-size: 60px !important;
+            margin: 60px 0 25px 0 !important;
+        }
+
+        /* 1 Week Free of Hulu Plus */
+        .publisher-site.huluplus  > #unlockable-btn{
+            top: 466px !important;
+            left: 624px !important;
+            height: 55px !important;
+            width: 321px !important;
+        }
+        .huluplus .adele{
+            font-size: 40px !important;
+            margin-top: 45px !important;
+        }
+        .huluplus .token-total{
+            font-size: 48px !important;
+            margin: 33px 0 25px 0 !important;
+        }
+
+    </style>
+
+    <div  id="unlockable-main"></div>
+
+    <div class="publisher-site">
+        <input type="button" id="unlockable-btn" value="Unlock 1 month free" tabindex="1"></input>
+        <input type="button" id="corp-btn" value="Back to Unlockable.com" tabindex="1"></input>
+        <input type="button" id="contact-btn" value="Contact Us" tabindex="1"></input>
+    </div>
+
+
+    <!-- <script>
+        // ONLY FOR USE IN Adobe DPS
+        // Pops modal and removes background image - code
+        // should stay commented out for demos needing landing page
+        // $(window).load(function () {
+            // $('#unlockable-btn').trigger('click');
+            // $('.publisher-site').css({
+            //    "background": "none"
+            // });
+        // });
+    </script>
+    -->
+    <div>
+      <input type="text"></input>
+    </div>
+
+  </body>
+
+</html>

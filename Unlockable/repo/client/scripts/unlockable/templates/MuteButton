@@ -1,0 +1,1 @@
+<button {{bindAttr class="this.isMuted fdjfdfd :mute-btn"}}>test</button>

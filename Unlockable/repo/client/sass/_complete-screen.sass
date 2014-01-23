@@ -1,0 +1,160 @@
+&.complete-screen
+  // Default Background
+
+  .banner
+
+    .gameName
+      font-size: 32px
+      line-height: 0px
+
+    &.complete
+      padding: 10px 0
+      font-size: 38px
+      line-height: 40px
+
+  .headline
+    width: 600px
+    margin: 15px auto 25px auto
+    color: white
+    font-family: $changoReg
+    letter-spacing: 10px
+    text-transform: uppercase
+    text-align: center
+    text-shadow: $headLineTextShadow 6px 8px 0px, $headLineTextShadow -2px -2px 0px, $headLineTextShadow 2px 2px 0px, $headLineTextShadow 2px -2px 0px, $headLineTextShadow -2px 2px 0px
+
+  .descriptor
+    margin: 10px auto auto auto
+    position: relative
+    color: $headLineTextShadow
+    font-size: 34px
+    font-family: $changoReg
+    text-align: center
+
+    td
+
+      &:nth-child(1)
+        padding-right: 15px
+        font-family: $newscycleBold
+        font-size: 18px
+        text-align: right
+
+      &:nth-child(2)
+        padding-right: 15px
+        text-align: left
+        text-shadow: white 2px 2px 0
+
+      &:nth-child(3)
+        font-size: 20px
+        text-align: left
+
+        &.trys
+          font-family: $newscycleBold
+          letter-spacing: 2px
+
+        &.max
+          font-family: $sigmarone
+
+  .stars
+    +transform(scale(.8))
+    width: 210px*3
+    height: 175px
+    margin: auto
+    position: relative
+    top: 4%
+
+    .star
+      +horizontal()
+      +animation-name(fadeInUp)
+      +animation-duration(1s)
+      +animation-fill-mode(forwards)
+      width: 197px
+      height: 100%
+      position: relative
+      opacity: 0
+
+      $scrunchBy: 2%
+
+      &.star-1
+        left: $scrunchBy
+        background-size: auto 100%
+
+      &.star-2
+        +animation-delay(.5s)
+        height: 224px
+        top: -30%
+        background-size: 100% auto
+
+      &.star-3
+        +animation-delay(1s)
+        right: 0
+        background-size: auto 100%
+
+
+  &[data-stars='1'],
+  &[data-stars='2'],
+  &[data-stars='3']
+
+    .star
+      background-position: 50% 50%
+      background-repeat: no-repeat no-repeat
+      background-size: auto 100%
+
+  &[data-stars='1']
+    @extend .backgrounds-purple-bg-pattern
+    background-repeat: repeat-x !important
+
+    .star
+
+      &.star-1
+        background: url(#{$imgPath + 'star-1.png'}) no-repeat
+        @extend .ui-elements-star-1
+
+      &.star-2
+        background: url(#{$imgPath + 'star-2-empty.png'}) no-repeat
+        @extend .ui-elements-star-2-empty
+        top: -37px
+        height: 192px
+
+      &.star-3
+        background: url(#{$imgPath + 'star-3-empty.png'}) no-repeat
+        @extend .ui-elements-star-3-empty
+        height: 160px
+        top: 19px
+
+  &[data-stars='2']
+    @extend .backgrounds-yellow-bg-pattern
+    background-repeat: repeat-x !important
+
+    .star
+
+      &.star-1
+        background: url(#{$imgPath + 'star-1.png'}) no-repeat
+        @extend .ui-elements-star-1
+
+      &.star-2
+        background: url(#{$imgPath + 'star-2.png'}) no-repeat
+        @extend .ui-elements-star-2
+
+      &.star-3
+        background: url(#{$imgPath + 'star-3-empty.png'}) no-repeat
+        @extend .ui-elements-star-3-empty
+        height: 160px
+        top: 19px
+
+  &[data-stars='3']
+    @extend .backgrounds-green-bg-pattern
+    background-repeat: repeat-x !important
+
+    .star
+
+      &.star-1
+        background: url(#{$imgPath + 'star-1.png'}) no-repeat
+        @extend .ui-elements-star-1
+
+      &.star-2
+        background: url(#{$imgPath + 'star-2.png'}) no-repeat
+        @extend .ui-elements-star-2
+
+      &.star-3
+        background: url(#{$imgPath + 'star-3.png'}) no-repeat
+        @extend .ui-elements-star-3

@@ -1,0 +1,17 @@
+<div class="unlockable-screen welcome-screen">
+  <div class="banner win">WIN</div>
+  <h1 class="headline adele">{{Unlockable.introText}}</h1>
+  <h4 class="descriptor">by playing games &<br>a 5-min survey</h4>
+  <a {{action startGame}} class="base-btn play" tab-index="1">PLAY!</a>
+  <a {{action howItWorks}} class="how-does-it-work question-mark">?</a>
+  <!-- <a {{!action howItWorks}} class="how-does-it-work">(It takes about <span>3 minutes</span>)</a> -->
+    {{# if Unlockable.debug }}
+    <a {{action error}}>CAUSE AN ERROR</a>
+    {{/ if }}
+
+  <a {{action howItWorks}} class="how-does-it-work TOS">Privacy Policy & Terms of Use</a>
+  <div class="coinstack"></div>
+</div>
+<div class="ted presenting"></div>
+
+<button id="unlockable-close-modal" class="unlockable-close-modal">X</button>

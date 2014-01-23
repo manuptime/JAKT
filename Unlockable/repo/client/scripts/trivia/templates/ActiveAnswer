@@ -1,0 +1,22 @@
+{{# if isCorrect }}
+<div class="unlockable-screen trivia-answers-screen correct-answer">
+{{ else }}
+<div class="unlockable-screen trivia-answers-screen incorrect-answer">
+{{/if}}
+  <h1 class="headline question">{{{question}}}</h1>
+  {{# if isCorrect }}
+    <a class='base-btn correct'>{{answer}}</a>
+  {{else}}
+    <a class='base-btn incorrect'>{{answer}}
+    <a class='base-btn correct'>{{question.correctAnswer}}</a>
+  {{/if}}
+  <ul class='question-count'>
+    {{# each attempt in question.game.answerAttempts }}
+    <li {{bindAttr class="attempt.isCorrect:correct:incorrect"}}>
+      <div class="indicator"></div>
+    </li>
+    {{/each}}
+  </ul>
+</div>
+
+<a {{action confirmAnswer}} class='base-btn continue'>Continue</a>

@@ -1,0 +1,87 @@
+&.welcome-screen
+  text-align: center
+  // Default background
+
+  .banner.win
+    font-size: $frameBorderRadius
+    line-height: 90px
+
+  .headline
+    +animation-name(bounceIn)
+    +animation-duration(2s)
+    +transform(translateZ(0))
+    width: 62.2406639%
+    color: white
+    letter-spacing: 10px
+    margin-top: 5%
+    font-family: $changoReg
+    text-transform: uppercase
+    text-align: center
+    text-shadow: $headLineTextShadow 6px 8px 0px, $headLineTextShadow -2px -2px 0px, $headLineTextShadow 2px 2px 0px, $headLineTextShadow 2px -2px 0px, $headLineTextShadow -2px 2px 0px
+
+  .adele
+    font-size: 66px
+
+  .song-by
+    font-size: 38px
+
+  .descriptor
+    margin-top: 20px
+    color: $headLineTextShadow
+    font-size: 27px
+    font-family: $changoReg
+    text-align: center
+    text-shadow: #FFF 1px 2px 0px
+
+  .base-btn.play
+    width: 42%
+    height: 70px
+    display: inline-block
+    left: none
+    margin-left: none
+    margin-top: 10px
+    font-size: 42px
+
+    span
+      margin-left: -18.5%
+
+  .coinstack
+    width: 250px
+    height: 233px
+    position: absolute
+    bottom: 10%
+    right: 1%
+    @extend .misc-coinstack-v2
+
+  .how-does-it-work
+    display: table
+    margin: auto
+    color: black
+    font-family: $newscycleBold
+    font-size: 19px
+
+    span
+      color: $callOutTextColor
+
+    &.question-mark
+      +wh(30px)
+      padding-left: 2px
+      position: absolute
+      right: 27%
+      top: 66%
+      color: white
+      font-family: $changoReg
+      font-size: 25px
+      text-align: center
+      background: $headLineTextShadow
+      border-radius: 50%
+
+
+    &.TOS
+      height: auto
+      min-width: 100px
+      margin-top: 5px
+      font-size: 12px
+
+      &:hover
+        color: $callOutTextColor

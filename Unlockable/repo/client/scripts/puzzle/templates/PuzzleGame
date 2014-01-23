@@ -1,0 +1,5 @@
+<canvas id="backcanvas" style="display: none;"></canvas>
+<canvas id="maincanvas" ></canvas>
+  {{# if Unlockable.debug}}
+    <a {{action commercialFinished}} style="float:right;font-weight:bold;color:blue;"> SKIP (development) </a>
+  {{/ if}}

@@ -1,0 +1,99 @@
+.unlockable-inner-modal-wrapper
+  +wh()
+  display: block
+  background: hsla(0,0,0,.5)
+  display: none
+  position: relative
+  top: -100%
+  +border-radius(72px)
+  z-index: $baseZ + 10
+
+.unlockable-inner-modal
+  width: 100%
+  height: 400px
+  max-width: 900px
+  margin: auto
+  background: white
+  border: 5px solid $themeBase
+  border-radius: 50px
+  position: absolute
+  top: 20%
+  left: 8%
+  z-index: $baseZ + 11
+
+  .tagline
+    font-family: $changoReg
+    font-size: 40px
+    color: lighten($themeAccent, 20%)
+    +text-shadow($headLineTextShadow 3px 4px 0px)
+    line-height: 40px
+    margin: 0
+    margin-bottom: 30px
+
+  form
+    .instructions
+      font-size: 25px
+      font-family: $newscycleRegular
+
+    .userEmail
+      background: #bababa
+      +box-shadow(inset 0 3px 9px rgba(96,96,96,.7))
+      border: none
+      border-radius: 15px
+      width: 100%
+      height: 40px
+      padding-left: 20px
+      color: white
+      font-size: 24px
+      font-family: $newscycleRegular
+      margin-bottom: 30px
+
+    .base-btn
+      width: 100%
+      height: 60px
+      font-size: 30px
+      bottom: 10%
+      color: $headLineTextShadow
+
+    .legalNotice
+      margin-top: 5px
+      font-size: 18px
+      font-family: $newscycleRegular
+      text-decoration: underline
+      position: relative
+
+      &::before
+        +pseudo()
+        content: '*'
+        +wh(5px)
+        position: absolute
+        top: 6px
+        left: -7px
+        line-height: 5px
+
+  .product
+    background: gray
+    +wh(90%)
+    display: block
+
+  .column
+    padding: 5% 0 0 7%
+    height: 100%
+
+  .column-1
+    width: 60%
+
+  .column-2
+    width: 35%
+
+  .unlockable-close-inner-modal
+    border: none
+    background: none
+    color: $themeBase
+    font-family: sans-serif
+    font-size: 30px
+    position: absolute
+    right: 25px
+    top: 15px
+    font-weight: bold
+    z-index: 1

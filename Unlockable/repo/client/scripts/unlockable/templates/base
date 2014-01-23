@@ -1,0 +1,7 @@
+<div id="unlockable-main-outer">
+  <div id="unlockable-main-inner">
+      <div id="unlockable-main-wrapper">
+          {{outlet}}
+      </div>
+  </div>
+</div>

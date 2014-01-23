@@ -1,0 +1,35 @@
+<div class="unlockable-screen frames-round-screen">
+  <ul class="attempts">
+    {{#each attempt in Unlockable.router.framesController.attempts}}
+      {{#if attempt}}
+        <li class="lock success"></li>
+      {{else}}
+        <li class="lock fail"></li>
+      {{/if}}
+    {{/each}}
+  </ul>
+  <ul class="initial-frames-list">
+    {{#each Unlockable.router.givenFramesController}}
+      <li class="initial-frame-item">
+        {{# view Unlockable.DropFrameView frameBinding="this" }}
+          {{# view Unlockable.DragFrameView frameBinding="this" }}
+            <img {{bindAttr src="view.image"}}/>
+          {{/view}}
+        {{/view}}
+      </li>
+    {{/each}}
+  </ul>
+  <ul class="ending-frames-list">
+    {{#each frame in Unlockable.router.playFramesController}}
+      <li class="ending-frame-item">
+        {{# view Unlockable.DropFrameView frameBinding="frame" }}
+          {{# view Unlockable.DragFrameView frameBinding="frame"}}
+            <img {{bindAttr src="view.image"}} />
+          {{/view}}
+        {{/view}}
+      </li>
+    {{/each}}
+  </ul>
+</div>
+
+<a {{action next}} {{bindAttr class=":base-btn :next hasPlaced::disabled"}}>SUBMIT</a>

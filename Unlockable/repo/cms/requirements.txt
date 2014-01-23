@@ -1,0 +1,9 @@
+flask
+sqlalchemy
+flask-sqlalchemy
+git+git://github.com/gone/flask-admin.git@postprocess_inline
+
+alembic
+redis
+boto
+zencoder

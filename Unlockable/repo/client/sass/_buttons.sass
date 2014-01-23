@@ -1,0 +1,112 @@
+.unlockable-close-modal
+  background: $themeBase
+  position: absolute
+  z-index: -1
+  right: 0px
+  top: -15px
+  +wh(70px)
+  padding: 0
+  margin: 0
+  border: none
+  border-radius: 50%
+  padding-top: 5px
+  color: white
+  text-align: center
+  font-weight: bold
+  font-family: sans-serif
+  font-size: 40px
+  line-height: 40px
+  
+  +breakpoint(0px 1024px)
+    text-indent: 5px
+
+  &:hover, &:active
+    color: red
+
+%buttonBase
+  display: block
+  padding: 0
+  position: relative
+  margin: auto
+  color: $callOutTextColor
+  font-family: $sigmarone
+  text-align: center
+  text-transform: uppercase
+  +box-shadow(rgba(0,0,0,.5) 0 0 10px)
+  +transition-duration(.1s)
+  background-color: #fde382 // Old browsers
+  +filter-gradient(#fde382, #d8b000, vertical) // IE6-8
+  // IE9 SVG, needs conditional override of 'filter' to 'none'
+  $experimental-support-for-svg: true
+  +background-image(linear-gradient(top,  #fde382 0%,#fee485 4%,#fde382 13%,#fce482 45%,#ffe689 49%,#f8dc6f 51%,#edcc49 53%,#e8c73c 55%,#e8c537 60%,#e5c232 62%,#e3c028 69%,#dbb401 91%,#d8b000 100%))
+  border-radius: 15px
+
+  &:active
+    top: 4px
+
+%base-btn
+  width: 35%
+  height: 70px
+  font-size: 42px
+
+.base-btn.next
+  @extend %base-btn
+  position: relative
+  top: 2%
+  height: 60px
+  font-size: 37px
+
+.base-btn.start
+  @extend .base-btn.next
+
+.base-btn.report-error
+  @extend .base-btn.next
+  font-size: 22px
+  width: 30%
+
+.base-btn.continue
+  @extend .base-btn.next
+  position: absolute
+  top: 66%
+  left: 52.5%
+  margin-left: -18.5%
+  margin-top: 10px
+  width: 30%
+  height: 63px
+  font-size: 38px
+
+.base-btn.disabled
+  background-color: #fbf1b4
+  +filter-gradient(#fbf1b4, #ecde95, vertical)
+  +background-image(linear-gradient(top, #fbf1b4 0%,#fbf3b5 48%,#f2e99e 50%,#ece08c 52%,#eadd81 63%,#ebde82 65%,#e7da7a 70%,#e6d676 80%,#e3d670 83%,#e1d26b 93%,#e1d36a 97%,#e3d572 98%,#ecde95 100%))
+  color: #cf7978
+  position: relative
+
+#mute-btn, .customer-service-btn
+  border-radius: 50%
+  border: none
+  background: $themeBase
+  height: 50px
+  width: 50px
+  max-width: 50px
+  color: white
+  position: absolute
+  top: -20px
+  z-index: -1
+
+#mute-btn
+  right: 100px
+  font-size: 34px
+  display: block
+  padding: 0
+
+.customer-service-btn
+  right: 175px
+
+  &::after
+    display: block
+    width: 100%
+    height: 100%
+    content: '?'
+    font-size: 35px
+    font-family: chango-regular-webfont

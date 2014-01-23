@@ -1,0 +1,100 @@
+&.how-it-works-screen
+  @extend .backgrounds-dark-blue-bg-pattern-2
+  background-repeat: repeat-x !important
+
+  .column-1, .column-2
+    height: 100%
+    +horizontal()
+
+  .column-1
+    width: 35%
+    margin: 0
+
+    .back-btn
+      display: block
+      margin: 0 0 60px 0
+      color: white
+      font-family: $newscycleRegular
+      font-size: 32px
+      font-weight: bold
+      line-height: 22px
+
+      &::before
+        +pseudo()
+        +horizontal()
+        border-top: 12px solid transparent
+        border-right: 16px solid white
+        border-bottom: 12px solid transparent
+
+      &:hover
+        color: $themeAccent
+
+        &::before
+          border-right-color: $themeBase
+
+    .table-of-contents
+      padding-left: 20px
+      font-size: 22px
+      font-family: $newscycleRegular
+      line-height: 26px
+
+      a
+        color: $themeBase
+        font-weight: bold
+
+        &:hover
+          color: white
+
+  .column-2
+    width: 60%
+
+    .scroll-container
+      width: 100%
+      height: 85%
+      overflow-y: scroll
+
+    ol
+      padding-left: 30px
+
+    .headline
+      margin: 0 0 60px 0
+      color: #63c671
+      font-size: 50px
+      font-family: $changoReg
+      line-height: 15px
+      text-shadow: 3px 5px $headLineTextShadow
+
+    .section-name
+      margin: 0
+      color: $themeBase
+      font-size: 18px
+      font-family: $newscycleRegular
+      font-weight: bold
+      text-transform: uppercase
+
+    .info
+      margin: 0 0 20px 0
+      color: white
+      font-size: 16px
+      font-family: Arial, sans-serif
+      line-height: 26px
+
+      .info-text-title
+        font-weight: bold
+
+      .info-text-img
+        max-width: 60%
+        margin: 15px auto 11px auto
+        border: 1px solid #63C671
+
+      .info-text-indent
+        padding-left: 17px
+
+      .info-text-underline
+        text-decoration: underline
+
+      a.info-text-link
+        color: #63C671
+
+        &:hover
+          color: white
