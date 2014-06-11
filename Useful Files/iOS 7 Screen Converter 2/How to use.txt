@@ -1,0 +1,5 @@
+Step 1: Open the iOS 7 Screen Converter PSD file
+Step 2: Paste your JPEG screen (640 x 1136) into the layer specified
+Step 3: Adjust the blend mode to the desired effect (Light enough for accessibility). Typically Lighten, Screen, Color Dodge, Linear Dodge (Add), Lighten Color, Overlay, Soft Light will work. 
+Step 4: Choose your blurred background from the layers
+Step 5: iOS 7 conversion complete!
