@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>id</key>
+		<string>Tooshy Down Tummy Time</string>
+		<key>description</key>
+		<string>To promote neck strength, head control, shoulder girdle development, and flexor-extensor control. </string>
+		<key>instruction</key>
+		<string>Gently roll baby onto belly, apply gentle pressure down on the top of the tooshy (pelvis) to allow for easier head lifting and use of arms.  For a younger baby you can also roll a small towel under the chest to allow for easier head lifting.  If one of baby’s arms get stuck under them, you can apply more pressure to opposite side of tooshy to help them free the stuck arm. </string>
+		<key>url</key>
+		<string>http://www.google.com</string>
+		<key>price</key>
+		<string>com.sbapp.superbaby.tooshydowntummytime</string>
+		<key>thumbnail</key>
+		<string>image.png</string>
+		<key>annotation</key>
+		<string>tooshyDownTummyTimeAnnotation</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<string>Over-Leg Tummy Time</string>
+		<key>description</key>
+		<string>To promote neck strength, head control, and shoulder girdle development.</string>
+		<key>instruction</key>
+		<string>Roll baby onto belly with chest resting on your leg.  Encourage baby to use arms to push off your leg.  Encourage baby to look up/down in different directions. As baby’s arms become stronger, you can roll baby forward over your leg. </string>
+		<key>url</key>
+		<string>http://www.google.com</string>
+		<key>price</key>
+		<string>FREE</string>
+		<key>thumbnail</key>
+		<string>image.png</string>
+		<key>annotation</key>
+		<string>overLegTummyTimeAnnotation</string>
+	</dict>
+</array>
+</plist>
