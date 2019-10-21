@@ -9,7 +9,7 @@ gevent
 psycogreen==0.0.1
 psycopg2==2.5
 py-bcrypt==0.4
-urllib3==1.5
+urllib3==1.24.2
 SQLAlchemy==0.8.0
 -e git+https://github.com/j2labs/brubeck.git@e006af7f39d81e77bd11c75c26767ae843bcfa09#egg=brubeck-dev
 boto==2.9.2
